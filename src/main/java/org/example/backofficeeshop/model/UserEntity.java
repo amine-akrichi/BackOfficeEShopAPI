@@ -28,8 +28,8 @@ public class UserEntity implements UserDetails {
     private String username;
     private String password;
     private String email;
-    private String firstname;
-    private String lastname;
+    private String prenom;
+    private String nom;
 
     @Enumerated(EnumType.STRING)
     private Role role;

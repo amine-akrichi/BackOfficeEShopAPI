@@ -7,6 +7,7 @@ import org.example.backofficeeshop.model.Role;
 import org.example.backofficeeshop.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
@@ -31,13 +32,12 @@ public class SecurityConfig {
     private final PasswordEncoder passwordEncoder;
 
     @Bean
-    public DaoAuthenticationProvider authenticationProvider(){
+    public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userService.userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder);
         return authProvider;
     }
-
 
 
     @Bean
@@ -51,8 +51,16 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers( "/api/v1/**").permitAll()
-                        //.requestMatchers( "/api/v1/auth/**").hasRole(Role.ROLE_USER.name())
+                        .requestMatchers("/api/v1/signin").permitAll()
+                        .requestMatchers("/api/v1/signup").permitAll()
+                        .requestMatchers("/api/v1/compte").hasRole(Role.ADMIN.name())
+                        .requestMatchers("/api/v1/role").hasRole(Role.ADMIN.name())
+                        .requestMatchers("/api/v1/produit").hasRole(Role.LOGISTIQUE.name())
+                        .requestMatchers("/api/v1/marque").hasRole(Role.LOGISTIQUE.name())
+                        .requestMatchers("/api/v1/coleur").hasRole(Role.LOGISTIQUE.name())
+                        .requestMatchers("/api/v1/client").hasRole(Role.MARKETING.name())
+                        .requestMatchers("/api/v1/livraison").hasRole(Role.MARKETING.name())
+                        .requestMatchers("/api/v1/Caracteristique").hasRole(Role.MARKETING.name())
                         .anyRequest().authenticated()
                 )
                 .cors(Customizer.withDefaults())

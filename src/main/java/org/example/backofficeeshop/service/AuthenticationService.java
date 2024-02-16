@@ -28,9 +28,9 @@ public class AuthenticationService {
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .email(request.getEmail())
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
-                .role(Role.ROLE_USER)
+                .prenom(request.getPrenom())
+                .nom(request.getNom())
+                .role(Role.MARKETING)
                 .build();
 
 
@@ -50,18 +50,6 @@ public class AuthenticationService {
             var jwt = jwtService.generateToken(user);
             return JwtAuthenticationResponse.builder().token(jwt).build();
         }
-        return null;
-
-//        if (!userRepository.findByUsername(request.getUsername()).isPresent()) {
-//            throw new IllegalArgumentException("Invalid username or password.");
-//        } else if (!passwordEncoder.matches(request.getPassword(), userRepository.findByUsername(request.getUsername()).get().getPassword())) {
-//            throw new IllegalArgumentException("Invalid username or password.");
-//        } else {
-//            var user = userRepository.findByUsername(request.getUsername())
-//                    .orElseThrow(() -> new IllegalArgumentException("Invalid username or password."));
-//            var jwt = jwtService.generateToken(user);
-//            return JwtAuthenticationResponse.builder().token(jwt).build();
-//        }
-
+        return JwtAuthenticationResponse.builder().token("test").build();
     }
 }
