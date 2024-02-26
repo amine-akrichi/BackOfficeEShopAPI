@@ -30,6 +30,7 @@ public class UserEntity implements UserDetails {
     private String email;
     private String prenom;
     private String nom;
+    private Boolean FLAG;
 
     @Enumerated(EnumType.STRING)
     private Role role;
