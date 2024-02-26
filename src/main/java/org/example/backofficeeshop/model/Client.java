@@ -1,9 +1,10 @@
 package org.example.backofficeeshop.model;
 
 import jakarta.persistence.*;
-import lombok.*;
-
-import javax.swing.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
