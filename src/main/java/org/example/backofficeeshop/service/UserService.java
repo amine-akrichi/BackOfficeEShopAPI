@@ -31,7 +31,8 @@ public class UserService {
 
     public ResponseEntity<UserEntity> addUser(UserEntity user) {
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            throw new IllegalStateException("User with username : " + user.getUsername() + " already exist in the database");
+            return ResponseEntity.status(409).build();
+            //throw new IllegalStateException("User with username : " + user.getUsername() + " already exist in the database");
         } else {
             userRepository.save(user);
             return ResponseEntity.ok(user);
