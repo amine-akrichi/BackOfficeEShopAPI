@@ -1,9 +1,9 @@
 package org.example.backofficeeshop.dto;
 
 
-import ch.qos.logback.core.net.server.Client;
 import lombok.Builder;
 import lombok.Data;
+import org.example.backofficeeshop.model.Client;
 
 import java.util.Date;
 
@@ -35,11 +35,10 @@ public class ClientDto {
         }
 
         return ClientDto.builder()
-                .codeClient(client.getcodeClient())
-                .username(client.getuser)
-                .codeGamme(gamme.getCodeGamme())
-                .libelle(gamme.getLibelle())
-                .FLAG(gamme.isFLAG())
+                .codeClient(client.getCodeClient())
+                .username(client.getUsername())
+                .libelle(client.getLibelle())
+                .FLAG(client.isFLAG())
                 .build();
     }
 

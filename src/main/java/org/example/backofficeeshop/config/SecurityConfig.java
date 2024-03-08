@@ -53,8 +53,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/v1/signin").permitAll()
                         .requestMatchers("/api/v1/signup").permitAll()
-                        //.requestMatchers("/api/v1/produit").permitAll()
-                       
                         .requestMatchers("/api/v1/compte").hasRole(Role.ADMIN.name())
                         .requestMatchers("/api/v1/role").hasRole(Role.ADMIN.name())
                         .requestMatchers("/api/v1/produit").hasRole(Role.MARKETING.name())
