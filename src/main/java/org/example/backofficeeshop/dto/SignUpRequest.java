@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.backofficeeshop.model.Role;
 
 @Data
 @Builder
@@ -17,5 +16,4 @@ public class SignUpRequest {
     String nom;
     String email;
     String password;
-    private Role role;
 }

@@ -30,7 +30,7 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .prenom(request.getPrenom())
                 .nom(request.getNom())
-                .role(request.getRole())
+                .role(Role.MARKETING)
                 .build();
 
 
