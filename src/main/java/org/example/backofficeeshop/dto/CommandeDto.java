@@ -25,7 +25,7 @@ public class CommandeDto {
     private EtatCommande etatCommande;
     private Boolean FLAG;
 
-
+    
     public static CommandeDto fromEntity(Commande commande) {
 
         if (commande == null) {

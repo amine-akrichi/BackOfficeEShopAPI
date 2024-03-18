@@ -1,6 +1,6 @@
 package org.example.backofficeeshop.model;
 
-public enum Role {
+public enum Role_Enum {
     ADMIN,
     MARKETING,
     LOGISTIQUE

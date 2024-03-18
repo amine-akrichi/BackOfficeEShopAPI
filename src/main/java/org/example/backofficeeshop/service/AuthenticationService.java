@@ -30,7 +30,7 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .prenom(request.getPrenom())
                 .nom(request.getNom())
-                .role(request.getRole())
+                .role(Role.MARKETING)
                 .build();
 
 
@@ -49,7 +49,7 @@ public class AuthenticationService {
                     .orElseThrow(() -> new IllegalArgumentException("Invalid username or password."));
             System.out.println(user.getRole());
             var jwt = jwtService.generateToken(user);
-            return JwtAuthenticationResponse.builder().token(jwt).user(user).build();
+            return JwtAuthenticationResponse.builder().token(jwt).build();
         }
         return JwtAuthenticationResponse.builder().token("test").build();
     }
