@@ -22,14 +22,6 @@ public class Commande {
     )
     private long codeCommande;
     private Date dateCommande;
-    private int nombreTotalProduits;
-    private double poidsTotal;
-    private float prixTotal;
-    private long numExpedition;
- //   private String etat;
-    @Enumerated(EnumType.STRING)
-    private TypeLivraison typeLivraison;
-
     @Enumerated(EnumType.STRING)
     private EtatCommande etatCommande;
     private Boolean FLAG;

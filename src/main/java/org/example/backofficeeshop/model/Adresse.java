@@ -12,22 +12,22 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @Entity
-@Table(name="Adress")
-public class Adress {
+@Table(name="Adresse")
+public class Adresse {
 
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-    private Long codeAdress;
+    private Long codeAdresse;
 
-    private int numéro;
+    private int numero;
 
     private  String rue;
 
    private String ville;
 
-   private int CodePostal;
+   private int codePostal;
 
    private  boolean flag;
 }
