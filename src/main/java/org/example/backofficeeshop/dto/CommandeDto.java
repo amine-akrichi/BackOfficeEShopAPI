@@ -35,9 +35,9 @@ public class CommandeDto {
         return CommandeDto.builder()
                 .codeCommande(commande.getCodeCommande())
                 .dateCommande(commande.getDateCommande())
-                .nombreTotalProduits(commande.getNombreTotalProduits())
-                .prixTotal(commande.getPrixTotal())
-                .numExpedition(commande.getNumExpedition())
+                //.nombreTotalProduits(commande.getNombreTotalProduits())
+                //.prixTotal(commande.getPrixTotal())
+               // .numExpedition(commande.getNumExpedition())
                 .FLAG(commande.getFLAG())
                 .build();
 

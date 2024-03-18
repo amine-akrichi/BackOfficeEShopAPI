@@ -17,7 +17,7 @@ import org.example.backofficeeshop.model.Adress;
 public class AdressDto {
 
 
-    private int numéro;
+    private int numero;
 
     private  String rue;
 
@@ -33,7 +33,7 @@ public class AdressDto {
         }
 
         return AdressDto.builder()
-                .numéro(adresse.getNuméro())
+                //.numéro(adresse.getNuméro())
                 .rue(adresse.getRue())
                 .ville(adresse.getVille())
                 .CodePostal(adresse.getCodePostal())
@@ -45,7 +45,7 @@ public class AdressDto {
             return null;
         }
         Adress adresse = new Adress();
-        adresse.setNuméro(adresseDto.getNuméro());
+       // adresse.setNuméro(adresseDto.getNuméro());
         adresse.setCodePostal(adresseDto.getCodePostal());
         adresse.setVille(adresseDto.getVille());
         adresse.setFlag(adresseDto.isFlag());
