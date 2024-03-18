@@ -20,10 +20,10 @@ public class LigneCommande {
             strategy = GenerationType.IDENTITY
     )
     private long codeLigneCommande;
-    private Number nombreProduits;
+    private Number nombreTotalProduits;
     private float poids;
-
     private float prix;
+    private long numExpedition;
 
     //Jointure avec la table Commande
     @ManyToOne
